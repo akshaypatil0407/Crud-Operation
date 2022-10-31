@@ -1,0 +1,71 @@
+﻿@model EmployeeInformation.Models.Employee_Details
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="text-center text-primary">Add Employee</h1>
+                </div>
+                <div class="card-body">
+                    <form method="post" asp-action="Create">
+                        <div class="form-group mt-2 d-flex">
+                            <label asp-for="FirstName" style="width:100px" ></label>
+                            <input type="text" asp-for="FirstName" class="form-control" />
+                        </div>
+
+                        <div class="form-group mt-2 d-flex">
+                            <label asp-for="LastName" style="width:100px"></label>
+                            <input type="text" asp-for="LastName" class="form-control" />
+                        </div>
+
+                        <div class="form-group mt-2 d-flex">
+                            <label asp-for="Gender" style="width:100px"></label>
+
+                         @*   <input type="text" asp-for="Gender" class="form-control" />*@
+                            <select asp-for="Gender" name="gender" id="gender" class="form-control" placeholder="Select Gender">
+                                <option value="">select gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        <div class="d-flex justify-content-between">
+
+                        <div class="form-group mt-2 d-flex">
+                                <label asp-for="DOB" style="width:100px"></label>
+                            <input type="date" asp-for="DOB" class="form-control" onchange="AgeCalculation()"  />
+
+                        </div>
+
+                        <div class="form-group mt-2 d-flex">
+                            <label asp-for="Age" class="me-3"></label>
+                                <input type="text" asp-for="Age" class="form-control" />
+                        </div>
+                        </div>
+
+                        <div class="form-group my-2 d-flex">
+                            <label asp-for="Address" class="me-4"></label>
+                            <input type="text" asp-for="Address" class="form-control" />
+                        </div>
+
+                        <div class="form-group d-flex justify-content-evenly">
+                            <input type="submit" value="Save" class="btn btn-md btn-success float-md-start mt-1"/>
+                            <input type="reset" value="Clear" class="btn btn-md btn-danger float-end mt-1"/>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
